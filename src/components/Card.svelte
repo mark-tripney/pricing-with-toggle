@@ -4,17 +4,18 @@
   export let users;
   export let storage;
   export let sendLimit;
+  import Button from './Button.svelte';
 </script>
 
 <div class="card">
   <h2>{subLevel}</h2>
   <ul>
     <li class="price"><span class="dollar">$</span>{price}</li>
-    <li class="spec">{storage} GB Storage</li>
+    <li class="spec">{storage} Storage</li>
     <li class="spec">{users} Users Allowed</li>
     <li class="spec">Send up to {sendLimit} GB</li>
   </ul>
-  <button>Learn more</button>
+  <Button>Learn more</Button>
 </div>
 
 <style>
@@ -28,6 +29,7 @@
     max-width: 350px;
     color: var(--gray-blue);
     padding-inline: 29px;
+    margin-bottom: 2rem;
   }
   .dollar {
     font-size: 2.5rem;
@@ -41,6 +43,9 @@
     border-top: none;
     color: var(--dark-gray-blue);
   }
+  :global(.highlight .price) {
+    color: #fff;
+  }
   ul {
     width: 100%;
     list-style: none;
@@ -48,23 +53,16 @@
   }
   li {
     text-decoration: none;
-    border-top: 1px solid var(--gray-blue);
+    border-top: 1px solid hsla(var(--gray-blue) / 0.4);
     padding-block: 13px;
   }
-  li:last-child {
-    border-bottom: 1px solid var(--gray-blue);
+  :global(.highlight li) {
+    border-top: 1px solid hsla(var(--white) / 0.5);
   }
-  button {
-    text-transform: uppercase;
-    width: 100%;
-    background: linear-gradient(#a2a7f0, #696edd);
-    color: #fff;
-    font-size: 0.8125rem;
-    letter-spacing: 1.39px;
-    padding-block: 0.875rem;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-block: 2rem;
+  li:last-child {
+    border-bottom: 1px solid hsla(var(--gray-blue) / 0.4);
+  }
+  :global(.highlight li:last-child) {
+    border-bottom: 1px solid hsla(var(--white) / 0.5);
   }
 </style>

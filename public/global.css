@@ -113,10 +113,12 @@ prefer not to see them
 
 :root {
   /* Colours */
+  --white: 0 100% 100%;
   --very-light-gray-blue: hsl(240, 78%, 98%);
   --light-gray-blue: hsl(234, 14%, 74%);
-  --gray-blue: hsl(233, 13%, 49%);
+  --gray-blue: 230 5% 52%;
   --dark-gray-blue: hsl(232, 13%, 33%);
+  --highlight-btn: hsl(237, 63%, 65%);
 }
 
 /**************************************************
@@ -137,7 +139,9 @@ body {
   background: var(--very-light-gray-blue);
   display: flex;
   flex-direction: column;
+  align-items: center;
   min-height: 100vh;
+  text-align: center;
 }
 
 /* Sticky footer */
@@ -147,6 +151,8 @@ body {
 
 h1 {
   font-size: 2rem; /* 32px */
+  color: hsl(232 13% 49%);
+  margin: 4rem 0 2rem;
 }
 
 h2 {
