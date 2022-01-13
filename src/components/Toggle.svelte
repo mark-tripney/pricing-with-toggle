@@ -1,6 +1,8 @@
-<script></script>
+<script>
+  export let monthly;
+</script>
 
-<button on:click>Toggle</button>
+<button on:click>{monthly ? 'Annual' : 'Monthly'}</button>
 
 <style>
   button {
@@ -11,5 +13,8 @@
     cursor: pointer;
     border-radius: 10px;
     margin-bottom: 4rem;
+  }
+  button:hover {
+    background: palevioletred;
   }
 </style>

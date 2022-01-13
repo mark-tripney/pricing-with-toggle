@@ -4,7 +4,7 @@
   export let users;
   export let storage;
   export let sendLimit;
-  import Button from './Button.svelte';
+  import Button from "./Button.svelte";
 </script>
 
 <div class="card">
@@ -26,10 +26,15 @@
     padding-top: 2rem;
     background-color: #fff;
     border-radius: 10px;
-    max-width: 350px;
+    min-width: 327px;
+    max-width: 327px;
     color: var(--gray-blue);
     padding-inline: 29px;
     margin-bottom: 2rem;
+  }
+  :global(.highlight .card) {
+    background: linear-gradient(135deg, #a2a7f0, #696edd);
+    color: #fff;
   }
   .dollar {
     font-size: 2.5rem;

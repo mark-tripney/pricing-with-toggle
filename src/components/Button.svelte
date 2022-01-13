@@ -19,6 +19,6 @@
   }
   :global(.highlight button) {
     color: var(--highlight-btn);
-    background: hsl(var(--white));
+    background: #fff;
   }
 </style>
