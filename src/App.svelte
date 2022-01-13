@@ -1,8 +1,5 @@
 <script>
   import Card from "./components/Card.svelte";
-  import Footer from "./components/Footer.svelte";
-  import Toggle from "./components/Toggle.svelte";
-  let monthly = true;
 
   // Card details
   const basicMonthly = {
@@ -26,21 +23,10 @@
     users: 10,
     sendLimit: 20,
   };
-  const handleClick = () => {
-    monthly = !monthly;
-    if (monthly) {
-      basicMonthly.price = 19.99;
-      proMonthly.price = 24.99;
-      masterMonthly.price = 39.99;
-    } else {
-      basicMonthly.price = 199.99;
-      proMonthly.price = 249.99;
-      masterMonthly.price = 399.99;
-    }
-  };
 </script>
 
 <main class="site-content">
+<<<<<<< HEAD
   <h1>Our pricing</h1>
   <Toggle on:click={handleClick} {monthly} />
   <Card {...basicMonthly} />
@@ -53,3 +39,9 @@
 
 <style>
 </style>
+=======
+  <Card {...basicMonthly} />
+  <Card secondary {...proMonthly} />
+  <Card {...masterMonthly} />
+</main>
+>>>>>>> c039f76 (Add unique style to highlighted card.)
