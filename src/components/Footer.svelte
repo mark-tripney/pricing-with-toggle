@@ -12,11 +12,11 @@
 <style>
   footer {
     text-align: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     font-size: 0.875rem;
   }
   footer p {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: 400;
   }
 </style>

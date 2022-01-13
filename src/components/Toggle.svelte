@@ -2,7 +2,7 @@
   export let monthly;
 </script>
 
-<button on:click>{monthly ? 'Annual' : 'Monthly'}</button>
+<button on:click>{monthly ? "Annual" : "Monthly"}</button>
 
 <style>
   button {

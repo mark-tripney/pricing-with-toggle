@@ -1,35 +1,38 @@
 <script>
-  export let secondary = false;
+  export let highlight = false;
 </script>
 
-<button class:secondary><slot /></button>
+<button class:highlight><slot /></button>
 
 <style>
   button {
     --background: linear-gradient(135deg, #a2a7f0, #696edd);
-    --text-color: #fff;
+    --text-colour: #fff;
 
     text-transform: uppercase;
     width: 100%;
     background: var(--background);
-    color: var(--text-color);
+    color: var(--text-colour);
     font-size: 0.8125rem;
     letter-spacing: 1.39px;
     padding-block: 0.875rem;
-    border: none;
+    border: 1px solid transparent;
     border-radius: 6px;
     cursor: pointer;
     margin-block: 2rem;
   }
-<<<<<<< HEAD
-  :global(.highlight button) {
-    color: var(--highlight-btn);
-    background: #fff;
-=======
-
-  button.secondary {
+  button.highlight {
     --background: #fff;
-    --text-color: #6d72de;
->>>>>>> c039f76 (Add unique style to highlighted card.)
+    --text-colour: #6d72de;
+  }
+  button:hover {
+    background: #fff;
+    color: #6d72de;
+    border: 1px solid #6d72de;
+  }
+  button.highlight:hover {
+    border: 1px solid #fff;
+    color: #fff;
+    background: none;
   }
 </style>

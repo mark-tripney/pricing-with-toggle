@@ -4,11 +4,11 @@
   export let users;
   export let storage;
   export let sendLimit;
-  export let secondary = false;
+  export let highlight = false;
   import Button from "./Button.svelte";
 </script>
 
-<div class="card" class:secondary>
+<div class="card" class:highlight>
   <h2>{subLevel}</h2>
   <ul>
     <li class="price"><span class="dollar">$</span>{price}</li>
@@ -16,28 +16,42 @@
     <li class="spec">{users} Users Allowed</li>
     <li class="spec">Send up to {sendLimit} GB</li>
   </ul>
-  <Button {secondary}>Learn more</Button>
+  <Button {highlight}>Learn more</Button>
 </div>
 
 <style>
   .card {
+    /* Variables for standard cards */
     --background: #fff;
-    --text-color: var(--gray-blue);
-
+    --text-colour: hsl(var(--gray-blue));
+    --price-colour: var(--dark-gray-blue);
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     padding-top: 2rem;
     background: var(--background);
     border-radius: 10px;
-    max-width: 350px;
-    color: var(--text-color);
+    min-width: 327px;
+    max-width: 327px;
+    color: var(--text-colour);
     padding-inline: 29px;
+    margin-bottom: 2rem;
+  }
+  @media (min-width: 1050px) {
+    .card {
+      min-width: 350px;
+      max-width: 350px;
+    }
+    .card.highlight {
+      height: 501px;
+    }
   }
 
-  .card.secondary {
+  .card.highlight {
+    /* Variables for highlight card */
     --background: linear-gradient(135deg, #a2a7f0, #696edd);
-    --text-color: #fff;
+    --text-colour: #fff;
+    --price-colour: #fff;
   }
 
   .dollar {
@@ -51,7 +65,7 @@
     align-items: center;
     justify-content: center;
     border-top: none;
-    color: var(--text-color);
+    color: var(--price-colour);
   }
 
   ul {
@@ -62,11 +76,13 @@
 
   li {
     text-decoration: none;
-    border-top: 1px solid var(--text-color);
+    /* TODO: Add some opacity to border */
+    border-top: 1px solid var(--text-colour);
     padding-block: 13px;
   }
 
   li:last-child {
-    border-bottom: 1px solid var(--text-color);
+    /* TODO: Add some opacity to border */
+    border-bottom: 1px solid var(--text-colour);
   }
 </style>

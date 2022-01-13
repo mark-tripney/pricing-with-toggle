@@ -34,8 +34,8 @@ elements with a list role (which
 suggests default styling will be
 removed)
 ***********************************/
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -133,7 +133,7 @@ prefer not to see them
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 0.9375rem; /* 15px */
   background: var(--very-light-gray-blue);
@@ -147,6 +147,17 @@ body {
 /* Sticky footer */
 .site-content {
   flex: 1;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 1050px) {
+  .wrapper {
+    flex-direction: row;
+  }
 }
 
 h1 {
