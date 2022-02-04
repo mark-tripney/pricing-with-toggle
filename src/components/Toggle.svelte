@@ -12,7 +12,6 @@
     padding: 1rem 1.5rem;
     cursor: pointer;
     border-radius: 10px;
-    margin-bottom: 4rem;
   }
   button:hover {
     background: palevioletred;
