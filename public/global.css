@@ -179,6 +179,12 @@ h2 {
   font-size: 1.125rem; /* 18px */
 }
 
-a {
+a,
+a:visited {
   font-weight: 600;
+  color: var(--dark-gray-blue);
+}
+
+a:hover {
+  color: #878be1;
 }

@@ -3,12 +3,14 @@
 </script>
 
 <div class="toggle-component">
-  <p>Annual</p>
-  <label class="toggle">
-    <input type="checkbox" on:click />
-    <span class="slider" />
+  <input class="input" id="toggle" type="checkbox" on:click />
+  <label class="label" for="toggle">
+    <span class="option annual">Annual</span>
+    <span class="switch">
+      <span class="slider" />
+    </span>
+    <span class="option monthly">Monthly</span>
   </label>
-  <p>Monthly</p>
 </div>
 
 <style>
@@ -19,23 +21,40 @@
     gap: 1.5rem;
     margin-bottom: 5rem;
   }
+
   @media (min-width: 1050px) {
     .toggle-component {
       margin-bottom: 4rem;
     }
   }
-  .toggle {
+
+  .label {
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .switch,
+  .input:checked + .label .monthly,
+  .input:not(:checked) + .label .annual {
+    pointer-events: all;
+    cursor: pointer;
+  }
+
+  .option:not(:checked):hover {
+    opacity: 1;
+  }
+
+  .input {
+    display: none;
+  }
+
+  .switch {
     position: relative;
     display: inline-block;
     width: 56px;
     height: 32px;
-  }
-
-  /* Hide default checkbox */
-  .toggle input {
-    opacity: 0;
-    width: 0;
-    height: 0;
   }
 
   .slider {
@@ -48,7 +67,6 @@
     background: linear-gradient(135deg, #a2a7f0 0%, #696edd 100%);
     -webkit-transition: 0.2s;
     transition: 0.2s;
-    border-radius: 16px;
   }
 
   .slider:before {
@@ -56,24 +74,31 @@
     content: "";
     height: 24px;
     width: 24px;
-    right: 4px;
+    left: 28px;
     bottom: 4px;
     background-color: white;
     -webkit-transition: 0.2s;
     transition: 0.2s;
-    border-radius: 50%;
   }
 
-  input:checked + .slider {
+  input:checked + .label .slider {
     background-color: #2196f3;
   }
 
-  input:focus + .slider {
+  input:focus + .label .slider {
     box-shadow: 0 0 1px #2196f3;
   }
 
-  input:checked + .slider:before {
+  input:checked + .label .slider:before {
     transform: translateX(-24px);
+  }
+
+  .slider {
+    border-radius: 34px;
+  }
+
+  .slider:before {
+    border-radius: 50%;
   }
 
   .slider:hover {
@@ -81,7 +106,8 @@
     opacity: 0.5;
   }
 
-  p {
+  .annual,
+  .monthly {
     color: #6e728e;
     font-size: 0.9375rem;
     opacity: 0.5;
