@@ -3,16 +3,26 @@
 </script>
 
 <div class="toggle-component">
+  <p>Annual</p>
   <label class="toggle">
     <input type="checkbox" on:click />
     <span class="slider" />
   </label>
+  <p>Monthly</p>
 </div>
 
 <style>
   .toggle-component {
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 5rem;
+  }
+  @media (min-width: 1050px) {
+    .toggle-component {
+      margin-bottom: 4rem;
+    }
   }
   .toggle {
     position: relative;
@@ -36,8 +46,8 @@
     right: 0;
     bottom: 0;
     background: linear-gradient(135deg, #a2a7f0 0%, #696edd 100%);
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
     border-radius: 16px;
   }
 
@@ -49,8 +59,8 @@
     right: 4px;
     bottom: 4px;
     background-color: white;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
     border-radius: 50%;
   }
 
@@ -68,6 +78,12 @@
 
   .slider:hover {
     background: linear-gradient(135deg, #a2a7f0 0%, #696edd 100%);
+    opacity: 0.5;
+  }
+
+  p {
+    color: #6e728e;
+    font-size: 0.9375rem;
     opacity: 0.5;
   }
 </style>

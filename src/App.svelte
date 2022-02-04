@@ -41,21 +41,39 @@
   };
 </script>
 
-<header>
-  <h1>Our Pricing</h1>
-  <Toggle on:click={handleClick} {monthly} />
-</header>
-<main class="site-content">
-  <div class="wrapper">
-    <Card {...basicMonthly} />
-    <Card highlight {...proMonthly} />
-    <Card {...masterMonthly} />
-  </div>
-</main>
+<div class="content-wrapper">
+  <header>
+    <h1>Our Pricing</h1>
+    <Toggle on:click={handleClick} {monthly} />
+  </header>
+  <main class="site-content">
+    <div class="wrapper">
+      <Card {...basicMonthly} />
+      <Card highlight {...proMonthly} />
+      <Card {...masterMonthly} />
+    </div>
+  </main>
+</div>
 <Footer />
 
 <style>
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  header {
+    margin-top: 4rem;
+  }
   h1 {
-    margin-top: 3rem;
+    margin-bottom: 2.5rem;
+  }
+  @media (min-width: 1050px) {
+    header {
+      margin: 0;
+    }
+    h1 {
+      margin-bottom: 2rem;
+    }
   }
 </style>

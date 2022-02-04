@@ -41,6 +41,7 @@
     .card {
       min-width: 350px;
       max-width: 350px;
+      margin-bottom: 0;
     }
     .card.highlight {
       height: 501px;
@@ -52,6 +53,7 @@
     --background: linear-gradient(135deg, #a2a7f0, #696edd);
     --text-colour: #fff;
     --price-colour: #fff;
+    justify-content: center;
   }
 
   .dollar {

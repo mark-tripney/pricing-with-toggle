@@ -145,11 +145,17 @@ body {
   text-align: center;
 }
 
+.content-wrapper {
+  flex: 1;
+}
+
 /* Sticky footer */
 .site-content {
-  flex: 1;
+  /*flex: 1;*/
   display: flex;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .wrapper {
