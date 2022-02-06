@@ -1,7 +1,3 @@
-<script>
-  export let monthly;
-</script>
-
 <div class="toggle-component">
   <input class="input" id="toggle" type="checkbox" on:click />
   <label class="label" for="toggle">
